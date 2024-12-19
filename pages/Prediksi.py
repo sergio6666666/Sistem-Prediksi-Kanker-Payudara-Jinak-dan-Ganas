@@ -1,10 +1,8 @@
 import pickle
-import numpy as np
-import os
 import streamlit as st
 
-# Path ke model
-model_path = os.path.join(os.path.dirname(_file_), '../kanker_logreg.sav')
+# Path model relatif
+model_path = '../kanker_logreg.sav'
 
 # Load model
 try:
