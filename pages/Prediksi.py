@@ -1,20 +1,13 @@
 import pickle
+import numpy as np
 import streamlit as st
 import os
-st.write("Current Working Directory:", os.getcwd())
-st.write("Files in Current Directory:", os.listdir())
-st.write("Files in Parent Directory:", os.listdir(".."))
 
-# Path model relatif
-model_path = '../kanker_logreg.sav'
+# Path ke file model
+model_path = os.path.join(os.getcwd(), 'kanker_logreg.sav')
 
 # Load model
-try:
-    with open(model_path, 'rb') as file:
-        model = pickle.load(file)
-except FileNotFoundError:
-    st.error(f"File model tidak ditemukan di path: {model_path}")
-    st.stop()
+model = pickle.load(open(model_path, 'rb'))
 
 # Judul
 st.title('Prediksi Kanker Payudara dengan Logistic Regression')
