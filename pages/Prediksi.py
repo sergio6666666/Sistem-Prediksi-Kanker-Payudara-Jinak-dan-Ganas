@@ -1,5 +1,9 @@
 import pickle
 import streamlit as st
+import os
+st.write("Current Working Directory:", os.getcwd())
+st.write("Files in Current Directory:", os.listdir())
+st.write("Files in Parent Directory:", os.listdir(".."))
 
 # Path model relatif
 model_path = '../kanker_logreg.sav'
